@@ -45,5 +45,4 @@ jobs:
          working-directory: ./packer/
          env:
            AWS_ACCESS_KEY_ID:  ${{ secrets.DEV_ACCESS_KEY }}
-           AWS_SECRET_ACCESS_KEY:  ${{ secrets.DEV_SECRET_KEY }}
-           AWS_DEFAULT_REGION:  ${{ secrets.DEV_REGION }}
+
