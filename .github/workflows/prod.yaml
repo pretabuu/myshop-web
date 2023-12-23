@@ -3,7 +3,7 @@ name: "DEV IMAGE BUILD"
 on:
   push:
     branches:
-      - master
+      - prod
 
 jobs:
   build:
