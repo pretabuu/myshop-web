@@ -11,6 +11,7 @@ packer {
 source "amazon-ebs" "website" {
     ami_name      = local.image-name
     source_ami    = var.ami
+  #  region        = var.region
     instance_type = "t2.micro"
     ssh_username  = "ec2-user"
     tags = {
@@ -31,5 +32,4 @@ build {
   provisioner "shell" {
     script             = "./setup.sh"
     execute_command   = "sudo {{.Path}}"
-  }
-}
+

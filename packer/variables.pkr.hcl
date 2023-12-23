@@ -18,7 +18,10 @@ variable "ami" {
     description = "source AMI ID"
 }
 
-
+#variable "region" {
+#  type        = string
+#  description = "my region"
+#}
 locals{
 image-timestamp = "${formatdate("DD-MM-YYYY", timestamp())}"
 image-name = "${var.project_name}-${var.project_env}-${var.vnum}"
