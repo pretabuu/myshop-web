@@ -1,7 +1,7 @@
 ---
 
 
-name: "dev image build and deployment"
+name: "PROD image build and deployment"
 
 on:
 
@@ -16,6 +16,9 @@ jobs:
 
      runs-on: ubuntu-latest
      env:
+        AWS_ACCESS_KEY_ID:  ${{ secrets.PROD_ACCESS_KEY }}
+        AWS_SECRET_ACCESS_KEY:  ${{ secrets.PROD_SECRET_KEY }}
+        AWS_DEFAULT_REGION:  ${{ secrets.PROD_REGION }}
         packer_version: "1.9.4"
 
      steps:
@@ -43,10 +46,6 @@ jobs:
        - name: "packer build image"
          run: packer build -var-file="prod.pkvars.hcl" .
          working-directory: ./packer/
-         env:
-           AWS_ACCESS_KEY_ID:  ${{ secrets.PROD_ACCESS_KEY }}
-           AWS_SECRET_ACCESS_KEY:  ${{ secrets.PROD_SECRET_KEY }}
-           AWS_DEFAULT_REGION:  ${{ secrets.PROD_REGION }}  
 
        - name: "Notify PROD Deploy Job"
          uses: peter-evans/repository-dispatch@v2
