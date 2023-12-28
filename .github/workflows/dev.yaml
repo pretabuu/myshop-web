@@ -47,3 +47,10 @@ jobs:
            AWS_ACCESS_KEY_ID:  ${{ secrets.DEV_ACCESS_KEY }}
            AWS_SECRET_ACCESS_KEY:  ${{ secrets.DEV_SECRET_KEY }}
            AWS_DEFAULT_REGION:  ${{ secrets.DEV_REGION }}  
+
+       - name: "Notify Dev Deploy Job"
+         uses: peter-evans/repository-dispatch@v2
+         with:
+           token: ${{ secrets.INFRA_PAT }}
+           repository: pretabuu/myshop-web-infra
+           event-type: deploy-infra
