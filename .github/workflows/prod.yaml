@@ -1,7 +1,7 @@
 ---
 
 
-name: "PROD image build and deployment"
+name: "PROD image build & deployment"
 
 on:
 
