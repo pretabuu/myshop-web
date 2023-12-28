@@ -35,7 +35,7 @@ https://www.tooplate.com/view/2114-pixie
                <?php
 $output = shell_exec('echo $HOSTNAME');
 echo "<h1><center><pre>$output</pre></center></h1>";
-echo "<h1><center>Shopping Application v1.0</center></h1>"
+echo "<h1><center>Shopping Application v2.0</center></h1>"
 ?>
             </span>
           </div>
